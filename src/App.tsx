@@ -7,6 +7,7 @@ import PostsProvider from "./context/posts/PostsProvider";
 import { Admin } from "./screens/Admin";
 import { Blog } from "./screens/Blog";
 import { Contact } from "./screens/Contact";
+import { Home } from "./screens/Home";
 import { Portfolio } from "./screens/Portfolio";
 import { Post } from "./screens/Post";
 
@@ -29,7 +30,8 @@ function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/admin/*" element={<Admin />} />
-              <Route path="*" element={<Portfolio />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="*" element={<Home />} />
             </Routes>
             <Footer />
           </div>

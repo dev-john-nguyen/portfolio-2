@@ -11,11 +11,13 @@ import useWindowDimensions from '../../hooks/window-dimensions.hooks';
 import Me from '../../assets/pictures/Me.png';
 // @ts-ignore
 import Resume from '../../assets/Resume.pdf';
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
     const [expand, setExpand] = useState(false);
     const { isAuth } = useContext(AuthContext);
     const { width } = useWindowDimensions();
+    const navigate = useNavigate()
 
     if (width < 600) {
         return (
@@ -25,7 +27,7 @@ const Sidebar = () => {
                         <Burger />
                     </div>
                     <div className="nav-menu">
-                        <MenuItem Svg={Folder} label="Portfolio" path="/" onClick={() => setExpand(false)} />
+                        <MenuItem Svg={Folder} label="Portfolio" path="/portfolio" onClick={() => setExpand(false)} />
                         <MenuItem Svg={Image} label="Blog" path="/blog" onClick={() => setExpand(false)} />
                         <MenuItem Svg={Message} label="Contact" path="/contact" onClick={() => setExpand(false)} />
                         <MenuItem Svg={File} label="Resume" onClick={() => {
@@ -33,7 +35,10 @@ const Sidebar = () => {
                             window.open(Resume)
                         }} />
                     </div>
-                    <div className="nav-footer">
+                    <div className="nav-footer" onClick={() => {
+                        navigate('/')
+                        setExpand(false)
+                    }}>
                         <img src={Me} alt='profile' />
                         <p className='slider-banner'>John Nguyen</p>
                     </div>
@@ -47,14 +52,17 @@ const Sidebar = () => {
         <nav>
             <div className='nav'>
                 <div className="nav-menu" style={{ paddingTop: 40 }}>
-                    <MenuItem Svg={Folder} label="Portfolio" path="/" />
+                    <MenuItem Svg={Folder} label="Portfolio" path="/portfolio" />
                     <MenuItem Svg={Image} label="Blog" path="/blog" />
                     <MenuItem Svg={Message} label="Contact" path="/contact" />
                     <MenuItem Svg={File} label="Resume" onClick={() => window.open(Resume)} />
                     {isAuth && <MenuItem Svg={AddFile} label="New Post" path="/admin/create-post" />}
                 </div>
                 <div className="nav-footer">
-                    <div className="nav-footer-content">
+                    <div className="nav-footer-content" onClick={() => {
+                        navigate('/')
+                        setExpand(false)
+                    }}>
                         <img src={Me} alt='profile' />
                         <p className='slider-banner'>John Nguyen</p>
                     </div>
