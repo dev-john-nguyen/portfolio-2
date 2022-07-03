@@ -23,7 +23,8 @@
 .page-header-title > h1 {
     font-size: 60px;
     margin-right: 50px;
-    min-width: 50%;
+    max-width: 80%;
+    flex-shrink: 0;
 }
 
 .page-header-line {
