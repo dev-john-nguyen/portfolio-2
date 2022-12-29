@@ -1,84 +1,100 @@
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-    --black: #1C1C1C;
-    --white: #FFFFFF;
-    --blue: #0066FF;
-    font-family: 'Overpass', sans-serif !important;
+  --black: #1c1c1c;
+  --white: #ffffff;
+  --blue: #0066ff;
+  font-family: "Overpass", sans-serif !important;
 }
 
 body {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 .App {
-    display: flex;
-    min-height: 100vh;
+  display: flex;
+  min-height: 100vh;
 }
 
 .content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-h1, h2, p {
-    margin: 0;
+.home-bg-img {
+  background-image: url("../assets/pictures/code-bg.jpg");
+  background-size: cover;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
 }
 
 button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    background-color: var(--blue);
-    color: var(--white);
-    font-size: 16px;
-    font-family: 'Overpass', sans-serif;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: .2s top;
-    top: 0px;
-    position: relative;
-    letter-spacing: 1.5px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--blue);
+  color: var(--white);
+  font-size: 16px;
+  font-family: "Overpass", sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s top;
+  top: 0px;
+  position: relative;
+  letter-spacing: 1.5px;
 }
 
 button:focus-visible {
-    outline: none;
+  outline: none;
 }
 
-button:hover{
-    opacity: .8;
+button:hover {
+  opacity: 0.8;
 }
 
-pre, li, ul {
-    font-family: 'Overpass', sans-serif !important; 
-    word-wrap: break-word;
+pre,
+li,
+ul {
+  font-family: "Overpass", sans-serif !important;
+  word-wrap: break-word;
 }
 
-code, blockquote, strong {
-    font-family: 'Overpass', sans-serif !important;
-    font-weight: 600 !important;
-    word-wrap: break-word;
+code,
+blockquote,
+strong {
+  font-family: "Overpass", sans-serif !important;
+  font-weight: 600 !important;
+  word-wrap: break-word;
 }
 
-input, textarea {
-    padding: 15px 10px;
-    border-radius: 5px;
-    border: 1px solid #eee;
-    font-family: 'Overpass', sans-serif;
-    color: var(--black);
+input,
+textarea {
+  padding: 15px 10px;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  font-family: "Overpass", sans-serif;
+  color: var(--black);
 }
 
 .input-control {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
 }
 
 .input-control label {
-    margin-bottom: 5px;
-    font-size: 12px;
+  margin-bottom: 5px;
+  font-size: 12px;
 }
 
 @import "Loader.css";
