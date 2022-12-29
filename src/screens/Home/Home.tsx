@@ -39,13 +39,14 @@ const Home = () => {
       </p>
       <div className="sm:flex gap-5">
         {" "}
-        <MenuItem Svg={<Folder />} label="Portfolio" path="/portfolio" />
-        <MenuItem Svg={<Image />} label="Blog" path="/blog" />
-        <MenuItem Svg={<Message />} label="Contact" path="/contact" />
+        <MenuItem Svg={<Folder />} label="Portfolio" path="/portfolio" isHome />
+        <MenuItem Svg={<Image />} label="Blog" path="/blog" isHome />
+        <MenuItem Svg={<Message />} label="Contact" path="/contact" isHome />
         <MenuItem
           Svg={<File />}
           label="Resume"
           onClick={() => window.open(ResumePdf)}
+          isHome
         />
       </div>
     </div>

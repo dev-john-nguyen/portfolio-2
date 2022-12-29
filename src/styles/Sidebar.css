@@ -60,7 +60,12 @@ nav {
 
 .nav-menu-item:hover > a > p {
   opacity: 1;
-  left: 40px;
+  left: 100px;
+}
+
+.nav-menu-item-home:hover > a > p {
+  opacity: 1;
+  left: 50px;
 }
 
 .nav-menu-item:hover {
